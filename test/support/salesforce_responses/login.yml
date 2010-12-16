@@ -1,0 +1,30 @@
+--- 
+:login_response: 
+  :result: 
+    :sandbox: false
+    :metadata_server_url: https://na6-api.salesforce.com/services/Soap/m/18.0/00D80000000dIjO
+    :password_expired: false
+    :session_id: 00D80000000dIjO!ARUAQGcMbiWs_dcMcDtWXsXMfFNfVZQhyY4oNFK02yMc0oAqux4eqvmCPQpYrKqTIDjRdJU31zf0O7XVm6nZvaJScPinDKdU
+    :user_id: 00580000002RPNqAAO
+    :server_url: https://na6-api.salesforce.com/services/Soap/u/18.0/00D80000000dIjO
+    :user_info: 
+      :user_full_name: Michael Smalls
+      :org_disallow_html_attachments: false
+      :user_name: mike@86demo.com
+      :user_time_zone: GMT
+      :organization_id: 00D80000000dIjOEAU
+      :org_default_currency_iso_code: USD
+      :profile_id: 00e80000001BZWOAA4
+      :user_type: Standard
+      :org_has_person_accounts: false
+      :organization_multi_currency: false
+      :user_email: mike@hooplasoftware.com
+      :user_locale: en_US
+      :accessibility_mode: false
+      :user_ui_skin: Theme3
+      :user_language: en_US
+      :role_id: 00E800000018h9LEAQ
+      :currency_symbol: $
+      :user_id: 00580000002RPNqAAO
+      :user_default_currency_iso_code: 
+      :organization_name: Hoopla Software

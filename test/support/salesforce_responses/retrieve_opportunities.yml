@@ -1,0 +1,67 @@
+--- 
+:retrieve_response: 
+  :result: 
+  # included from opportunities_for_user so we can test updating existing opportunities
+  - :type: sf:sObject
+    :close_date: "2009-08-13"
+    :stage_name: Closed Won
+    :is_closed: true
+    :is_won: true
+    :name: JJ cd
+    :amount: "6100.0"
+    :id: 
+    - 0068000000QFV26AAH
+    - 0068000000QFV26AAH
+  # these two actually came from real server return
+    :close_date: "2010-09-09"
+    :next_step: 
+    :type: sf:sObject
+    :last_modified_date: 2010-03-04 00:00:00 Z
+    :forecast_category: Pipeline
+    :stage_name: Id. Decision Makers
+    :probability: "60.0"
+    :forecast_category_name: Pipeline
+    :pricebook2_id: 
+    :is_closed: false
+    :owner_id: 005800000036sRcAAI
+    :is_deleted: false
+    :created_date: 2009-08-16 00:00:00 Z
+    :is_won: false
+    :created_by_id: 00580000002RPNqAAO
+    :account_id: 0018000000Vfky8AAB
+    :description: 
+    :name: Widget 5195 Opp
+    :system_modstamp: 2010-03-04 00:00:00 Z
+    :amount: "97050.0"
+    :last_modified_by_id: 00580000002RPNqAAO
+    :id: 
+    - 0068000000QtvS1AAJ
+    - 0068000000QtvS1AAJ
+    :has_opportunity_line_item: false
+    :last_activity_date: 
+    :close_date: "2010-07-28"
+    :next_step: 
+    :type: sf:sObject
+    :last_modified_date: 2010-03-04 00:00:00 Z
+    :forecast_category: Forecast
+    :stage_name: Negotiation/Review
+    :probability: "90.0"
+    :forecast_category_name: Commit
+    :pricebook2_id: 
+    :is_closed: false
+    :owner_id: 00580000002oSakAAE
+    :is_deleted: false
+    :created_date: 2009-08-17 00:00:00 Z
+    :is_won: false
+    :created_by_id: 00580000002RPNqAAO
+    :account_id: 0018000000VfksmAAB
+    :description: 
+    :name: Hotels.com, L.P.
+    :system_modstamp: 2010-03-04 00:00:00 Z
+    :amount: "10000.0"
+    :last_modified_by_id: 00580000002RPNqAAO
+    :id: 
+    - 0068000000QFjrUAAT
+    - 0068000000QFjrUAAT
+    :has_opportunity_line_item: false
+    :last_activity_date: 

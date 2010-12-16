@@ -1,0 +1,141 @@
+--- 
+:query_response: 
+  :result: 
+    :type: QueryResult
+    :done: true
+    :query_locator: 
+    :size: !str 
+      str: "544"
+      "@attributes": {}
+
+    :records: 
+    - :forecast_category: !str 
+        str: Pipeline
+        "@attributes": {}
+
+      :type: sf:sObject
+      :created_by_id: !str 
+        str: 00580000002RPNqAAO
+        "@attributes": {}
+
+      :amount: !str 
+        str: "100000.0"
+        "@attributes": {}
+
+      :probability: !str 
+        str: "50.0"
+        "@attributes": {}
+
+      :forecast_category_name: !str 
+        str: Pipeline
+        "@attributes": {}
+
+      :close_date: !str 
+        str: "2010-05-27"
+        "@attributes": {}
+
+      :last_modified_date: 2010-04-07T20:42:18+00:00
+      :next_step: 
+      :last_modified_by_id: !str 
+        str: 00580000002RPNqAAO
+        "@attributes": {}
+
+      :has_opportunity_line_item: false
+      :is_deleted: false
+      :system_modstamp: 2010-04-07T20:42:19+00:00
+      :description: 
+      :is_closed: false
+      :account_id: !str 
+        str: 0018000000VflkyAAB
+        "@attributes": {}
+
+      :name: !str 
+        str: New opp points test
+        "@attributes": {}
+
+      :pricebook2_id: 
+      :last_activity_date: 
+      :id: 
+      - !str 
+        str: 0068000000V7erMAAR
+        "@attributes": {}
+
+      - !str 
+        str: 0068000000V7erMAAR
+        "@attributes": {}
+
+      :is_won: false
+      :owner_id: !str 
+        str: 00580000002RPNqAAO
+        "@attributes": {}
+
+      :created_date: 2010-04-07T20:42:18+00:00
+      :stage_name: !str 
+        str: Value Proposition
+        "@attributes": {}
+
+    - :forecast_category: !str 
+        str: Forecast
+        "@attributes": {}
+
+      :type: sf:sObject
+      :created_by_id: !str 
+        str: 00580000002RPNqAAO
+        "@attributes": {}
+
+      :amount: !str 
+        str: "10000.0"
+        "@attributes": {}
+
+      :probability: !str 
+        str: "90.0"
+        "@attributes": {}
+
+      :forecast_category_name: !str 
+        str: Commit
+        "@attributes": {}
+
+      :close_date: !str 
+        str: "2010-04-16"
+        "@attributes": {}
+
+      :last_modified_date: 2010-04-07T19:52:38+00:00
+      :next_step: 
+      :last_modified_by_id: !str 
+        str: 00580000002RPNqAAO
+        "@attributes": {}
+
+      :has_opportunity_line_item: false
+      :is_deleted: false
+      :system_modstamp: 2010-04-07T19:52:38+00:00
+      :description: 
+      :is_closed: false
+      :account_id: !str 
+        str: 0018000000fjxLqAAI
+        "@attributes": {}
+
+      :name: !str 
+        str: AwesomeTownWithPoints
+        "@attributes": {}
+
+      :pricebook2_id: 
+      :last_activity_date: 
+      :id: 
+      - !str 
+        str: 0068000000V7eHPAAZ
+        "@attributes": {}
+
+      - !str 
+        str: 0068000000V7eHPAAZ
+        "@attributes": {}
+
+      :is_won: false
+      :owner_id: !str 
+        str: 00580000002RPNqAAO
+        "@attributes": {}
+
+      :created_date: 2010-04-07T19:52:38+00:00
+      :stage_name: !str 
+        str: Negotiation/Review
+        "@attributes": {}
+

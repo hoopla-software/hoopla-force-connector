@@ -1,0 +1,23 @@
+--- 
+:get_user_info_response: 
+  :result: 
+    :org_disallow_html_attachments: false
+    :user_name: mike@86demo.com
+    :user_full_name: Michael Smalls
+    :user_time_zone: America/Los_Angeles
+    :organization_id: 00D80000000dIjOEAU
+    :profile_id: 00e80000001BZWOAA4
+    :org_default_currency_iso_code: USD
+    :org_has_person_accounts: false
+    :user_type: Standard
+    :organization_multi_currency: false
+    :user_locale: en_US
+    :user_email: mike@hooplasoftware.com
+    :accessibility_mode: false
+    :user_language: en_US
+    :user_ui_skin: Theme2
+    :role_id: 00E800000018h9LEAQ
+    :user_default_currency_iso_code: 
+    :currency_symbol: $
+    :user_id: 00580000002RPNqAAO
+    :organization_name: Hoopla Software

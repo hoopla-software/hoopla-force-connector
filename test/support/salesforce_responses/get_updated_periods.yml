@@ -1,0 +1,13 @@
+--- 
+:get_updated_response: 
+  :result: 
+    :ids: 
+    - !str 
+      str: 026800000013AAxAAM
+      "@attributes": {}
+
+    - !str 
+      str: 026800000018RWqAAM
+      "@attributes": {}
+
+    :latest_date_covered: 2010-03-24T15:51:00+00:00

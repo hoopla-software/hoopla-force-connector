@@ -1,0 +1,11 @@
+--- 
+:query_response: 
+  :result: 
+    :query_locator: 
+    :size: "1"
+    :done: true
+    :records: 
+      :type: sf:User
+      :title: Mid Atlantic District Manager
+      :id: 
+      :is_active: true

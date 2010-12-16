@@ -1,0 +1,71 @@
+--- 
+:query_response: 
+  :result: 
+    :type: QueryResult
+    :query_locator: 
+    :size: !str 
+      str: "174"
+      "@attributes": {}
+
+    :done: true
+    :records: 
+    - :type: sf:sObject
+      :fiscal_year_settings_id: !str 
+        str: 022800000008eAlAAI
+        "@attributes": {}
+
+      :system_modstamp: 2010-03-19T15:54:35+00:00
+      :number: !str 
+        str: "12"
+        "@attributes": {}
+
+      :is_forecast_period: false
+      :quarter_label: 
+      :period_label: 
+      :start_date: !str 
+        str: "2010-12-01"
+        "@attributes": {}
+
+      :id: 
+      - !str 
+        str: 026800000018RbHAAU
+        "@attributes": {}
+
+      - !str 
+        str: 026800000018RbHAAU
+        "@attributes": {}
+
+      :end_date: !str 
+        str: "2010-12-31"
+        "@attributes": {}
+
+    - :type: sf:sObject
+      :fiscal_year_settings_id: !str 
+        str: 022800000008eAlAAI
+        "@attributes": {}
+
+      :system_modstamp: 2010-03-19T15:54:35+00:00
+      :number: !str 
+        str: "11"
+        "@attributes": {}
+
+      :is_forecast_period: false
+      :quarter_label: 
+      :period_label: 
+      :start_date: !str 
+        str: "2010-11-01"
+        "@attributes": {}
+
+      :id: 
+      - !str 
+        str: 026800000018RbGAAU
+        "@attributes": {}
+
+      - !str 
+        str: 026800000018RbGAAU
+        "@attributes": {}
+
+      :end_date: !str 
+        str: "2010-11-30"
+        "@attributes": {}
+
