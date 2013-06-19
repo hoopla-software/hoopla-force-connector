@@ -14,7 +14,7 @@ class HooplaForceConnectorTest < ActiveSupport::TestCase
    end
 
   test "sets the soap endpoint" do
-    assert_equal URI(@server_url), @sf.client.wsdl.soap_endpoint
+    assert_equal @server_url, @sf.client.globals[:endpoint]
   end
 
   test "string query with single result" do
@@ -57,7 +57,7 @@ class HooplaForceConnectorTest < ActiveSupport::TestCase
                          :password => password,
                          :api_key  => api_key)
     assert_equal clean_sf(:login)[:session_id], @sf.session_id
-    assert_equal URI(clean_sf(:login)[:server_url]), @sf.client.wsdl.soap_endpoint
+    assert_equal clean_sf(:login)[:server_url], @sf.client.globals[:endpoint]
   end
 
   test "login with partner credentials but use customer's session id" do
@@ -71,7 +71,7 @@ class HooplaForceConnectorTest < ActiveSupport::TestCase
                          :api_key  => api_key,
                          :session_id => "abc123")
     assert_equal "abc123", @sf.session_id
-    assert_equal URI(clean_sf(:login)[:server_url]), @sf.client.wsdl.soap_endpoint
+    assert_equal clean_sf(:login)[:server_url], @sf.client.globals[:endpoint]
   end
   
   test "runs arbitrary soap operations without body" do

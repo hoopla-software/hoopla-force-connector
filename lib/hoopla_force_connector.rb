@@ -3,7 +3,7 @@ require 'hoopla_force_connector/core_ext/hash'
 require 'hoopla_force_connector/sanitizer'
 
 class HooplaForceConnector
-  attr_reader :session_id, :server_url, :client
+  attr_reader :session_id, :server_url, :client, :proxy_uri
   attr_accessor :should_sanitize
 
   def self.default_client
@@ -21,30 +21,32 @@ class HooplaForceConnector
     @password = options[:password]
     @api_key = options[:api_key]
     @wsdl = options[:wsdl]
+    @proxy_uri = options[:proxy]
     @should_sanitize = true
 
-    @client = Savon::Client.new @wsdl
-
     if @session_id && @server_url
-      @client.wsdl.soap_endpoint = @server_url
+      @client = Savon.client(client_options)
     else
       login
     end
   end
 
   def login
-    response = sanitize(@client.login do |soap|
-      soap.body = { "wsdl:username" => @username, "wsdl:password" => @password + @api_key }
-    end.to_hash)
+    login_options = {:wsdl => @wsdl}
+    unless proxy_uri.nil?
+      login_options[:proxy] = proxy_uri
+    end
+    @client = Savon.client(login_options)
+    response = sanitize(@client.login({ "tns:username" => @username, "tns:password" => @password + @api_key }).to_hash)
 
     @session_id ||= response[:session_id]
-    @client.wsdl.soap_endpoint = response[:server_url]
+    @client = Savon.client(client_options)
   end
 
   def query(query)
-    result = __call__ :query, { "wsdl:queryString" => query }
+    result = __call__ :query, { "tns:queryString" => query }
 
-    sanitize(result) + query_more(result)
+    sanitize(result.body) + query_more(result.body)
   end
 
   def query_more(previous)
@@ -53,9 +55,9 @@ class HooplaForceConnector
     end
 
     locator = previous.values.first[:result][:query_locator]
-    result = __call__ :query_more, { "wsdl:QueryLocator" => locator}
+    result = __call__ :query_more, { "tns:QueryLocator" => locator}
 
-    sanitize(result) + query_more(result)
+    sanitize(result.body) + query_more(result.body)
   end
 
   # Note: Salesforce will bomb out if argument ordering is wrong. We only have one call that
@@ -65,7 +67,7 @@ class HooplaForceConnector
   end
 
   def method_missing(meth, *args, &block)
-    if @client.respond_to?(meth)
+    if @client.operations.include? meth
       __sanitized_call__ meth, args.last
     else
       super
@@ -73,32 +75,43 @@ class HooplaForceConnector
   end
 
   def __call__(meth, params = nil)
-    result = @client.send(meth) do |soap|
-      soap.header = { "wsdl:SessionHeader" => { "wsdl:sessionId" => @session_id } }
-      soap.body   = params.map_to_hash { |k, v| [convert_key(k), v] } if params 
-    end.to_hash
+    message = params.nil? ? {} : params.map_to_hash { |k, v| [convert_key(k), v] }
+    result = @client.call(meth.to_sym, :message => message)
   end
 
   def __sanitized_call__(meth, params = nil)
-    sanitize(__call__(meth, params))
+    sanitize(__call__(meth, params).body)
   end
 
   def convert_key(key)
-    if key.to_s =~ /^wsdl:/ || key.to_s =~ /!$/
+    if key.to_s =~ /^tns:/ || key.to_s =~ /!$/
       key
     else
-      "wsdl:" + key.to_s.camelize(:lower)
+      "tns:" + key.to_s.camelize(:lower)
     end
   end
   private :convert_key
 
 
   def respond_to?(meth)
-    super || @client.respond_to?(meth)
+    super || @client.operations.include?(meth)
   end
 
   def sanitize(raw)
     @should_sanitize ? Sanitizer.sanitize(raw) : raw
+  end
+
+  def client_options
+    out = { :wsdl => @wsdl,
+            :endpoint => @server_url,
+            :soap_header => { "tns:SessionHeader" => { "tns:sessionId" => @session_id } },
+            :read_timeout => 200
+    }
+    unless proxy_uri.nil?
+      out[:proxy] = proxy_uri
+    end
+
+    out
   end
 
   module ActiveRecordExtensions

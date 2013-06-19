@@ -10,7 +10,7 @@ class HooplaForceConnector
     def initialize(raw)
       @raw = raw
       raise "Don't know how to handle more than one key: #{@raw.inspect}" unless @raw.keys.size == 1
-      @result = raw.values.first[:result]
+      @result = @raw.values.first[:result]
     end
 
     def sanitize

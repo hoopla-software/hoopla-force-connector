@@ -11,7 +11,7 @@ $spec = Gem::Specification.new do |s|
   s.add_development_dependency 'i18n'
   s.add_development_dependency 'activesupport'
 
-  s.add_dependency 'hoopla-savon'
+  s.add_dependency 'savon'
 
   s.files = Dir['lib/**']
   s.rubyforge_project = 'nowarning'
